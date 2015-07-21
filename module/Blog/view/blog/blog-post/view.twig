@@ -1,0 +1,10 @@
+{% extends 'layout/layout.twig' %}
+
+{% block content %} <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.created|date('d.m.Y') }} at {{ post.created|date('H:i') }}</p>
+<div style='text-align: center' class="row">
+        <h1>{{ post.title }}</h1>
+        <hr>
+        <div>{{ post.text }}</div>
+        <hr>
+</div>
+{% endblock content %}

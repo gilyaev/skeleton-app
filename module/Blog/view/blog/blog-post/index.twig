@@ -1,0 +1,58 @@
+{% extends 'layout/layout.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="span9">
+            <!-- Blog Post -->
+            {% if isAllowed('controller\/Blog\\Controller\\BlogPost:edit') %}
+                {% for post in posts %}
+                    <div class="blogpost">
+                        <!-- Title -->
+                        <h1><a href="{{ url('blog', {'action': 'view', 'id': post.id}) }}">{{ post.title|e }}</a> {% if post.state == false %} <i style="font-size: 13px">(unpublished)</i>{% endif %}</h1>
+                        <!-- Author -->
+                        <p class="lead">
+                            by <a href="#">admin</a>
+                        </p>
+                        <hr>
+                        <!-- Date/Time -->
+                        <p style="float: right"><span class="glyphicon glyphicon-user"></span>Posted on {{ post.created|date('d.m.Y H:i') }}</p><a class="btn btn-large" href="{{ url('blog', {'action': 'edit', 'id': post.id}) }}">Edit</a>
+                        <a class="btn btn-large" data-toggle='modal' data-target='#confirm-delete{{  post.id}}'>Delete</a>
+                        <hr>
+                    </div>
+                    <div class='modal fade' id='confirm-delete{{ post.id }}' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    Delete
+                                </div>
+                                <div class='modal-body'>
+                                    Are you sure to delete this post?
+                                </div>
+                                <div class='modal-footer'>
+                                    <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+                                    <a class='btn btn-danger btn-ok' href='/blog/delete/{{  post.id }}'>Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for post in posts %}
+                    <div class="blogpost">
+                        <!-- Title -->
+                        <h1><a href="{{ url('blog', {'action': 'view', 'id': post.id}) }}">{{ post.title|e }}</a></h1>
+                        <!-- Author -->
+                        <p class="lead">
+                            by <a href="#">admin</a>
+                        </p>
+                        <hr>
+                        <!-- Date/Time -->
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.created|date('d.m.Y H:i') }}</p>
+                        <hr>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
