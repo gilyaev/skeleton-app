@@ -4,7 +4,11 @@
 <div style='text-align: center' class="row">
         <h1>{{ post.title }}</h1>
         <hr>
-        <div>{{ post.text }}</div>
+        <div class="container-fixed well well-large">{{ post.text }}</div>
         <hr>
+        <div style="text-align: center" class="span3">
+            <a href="{{ url('blog', {'action' : 'index'}) }}" class="btn btn-primary btn-large">
+                <span class="glyphicon glyphicon-hand-left"></span> Back</a>
+        </div>
 </div>
 {% endblock content %}

@@ -16,7 +16,6 @@ use ZfcUser\Entity\UserInterface;
  * @ORM\Entity
  * @ORM\Table(name="users")
  *
- * @author Tom Oram <tom@scl.co.uk>
  */
 class User implements UserInterface, ProviderInterface
 {

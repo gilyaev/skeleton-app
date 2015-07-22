@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="row">
+    {% if isAllowed('controller\/Blog\\Controller\\BlogPost:edit') %}
+    <div style="text-align: center" class="span8">
+        <a class="btn btn-large btn-info" href="{{ url('blog', {'action' : 'add'}) }}">Add New Post</a>
+    </div>
+    {% endif %}
     <div class="span9">
             <!-- Blog Post -->
             {% if isAllowed('controller\/Blog\\Controller\\BlogPost:edit') %}
@@ -15,7 +20,7 @@
                         </p>
                         <hr>
                         <!-- Date/Time -->
-                        <p style="float: right"><span class="glyphicon glyphicon-user"></span>Posted on {{ post.created|date('d.m.Y H:i') }}</p><a class="btn btn-large" href="{{ url('blog', {'action': 'edit', 'id': post.id}) }}">Edit</a>
+                        <p style="float: right"><span class="glyphicon glyphicon-time"></span>Posted on {{ post.created|date('d.m.Y H:i') }}</p><a class="btn btn-large" href="{{ url('blog', {'action': 'edit', 'id': post.id}) }}">Edit</a>
                         <a class="btn btn-large" data-toggle='modal' data-target='#confirm-delete{{  post.id}}'>Delete</a>
                         <hr>
                     </div>

@@ -18,31 +18,37 @@ class BlogPost
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=false)
      */
     protected $title;
+
     /**
      * @var text
      * @ORM\Column(type="text")
      */
     protected $text;
+
     /**
      * @var int
      * @ORM\Column(type="integer")
      */
     protected $userId;
+
     /**
      * @var int
      * @ORM\Column(type="integer")
      */
     protected $created;
+
     /**
      * @var int
      * @ORM\Column(type="integer", nullable=true)
      */
     protected $state;
+
     /**
      * Get id.
      *
@@ -52,6 +58,7 @@ class BlogPost
     {
         return $this->id;
     }
+
     /**
      * Set id.
      *
@@ -63,6 +70,7 @@ class BlogPost
     {
         $this->id = (int)$id;
     }
+
     /**
      * Get title.
      *
@@ -72,6 +80,7 @@ class BlogPost
     {
         return $this->title;
     }
+
     /**
      * Set title.
      *
@@ -83,6 +92,7 @@ class BlogPost
     {
         $this->title = $title;
     }
+
     /**
      * Get text.
      *
@@ -92,6 +102,7 @@ class BlogPost
     {
         return $this->text;
     }
+
     /**
      * Set text.
      *
@@ -103,6 +114,7 @@ class BlogPost
     {
         $this->text = $text;
     }
+
     /**
      * Get userId.
      *
@@ -112,6 +124,7 @@ class BlogPost
     {
         return $this->userId;
     }
+
     /**
      * Set userId.
      *
@@ -123,6 +136,7 @@ class BlogPost
     {
         $this->userId = $userId;
     }
+
     /**
      * Get created.
      *
@@ -132,6 +146,7 @@ class BlogPost
     {
         return $this->created;
     }
+
     /**
      * Set created.
      *
@@ -143,6 +158,7 @@ class BlogPost
     {
         $this->created = $created;
     }
+
     /**
      * Get state.
      *
@@ -152,6 +168,7 @@ class BlogPost
     {
         return $this->state;
     }
+
     /**
      * Set state.
      *
@@ -163,6 +180,7 @@ class BlogPost
     {
         $this->state = $state;
     }
+
     /**
      * Helper function.
      */
@@ -174,6 +192,7 @@ class BlogPost
             }
         }
     }
+
     /**
      * Helper function
      */

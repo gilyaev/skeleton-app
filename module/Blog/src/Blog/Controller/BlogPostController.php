@@ -17,9 +17,11 @@ class BlogPostController extends AbstractActionController
         if ($this->isAllowed('controller/Blog\Controller\BlogPost:edit')) {
             $state = [];
         }
+
         else {
             $state = ['state' => 1];
         }
+
         $posts = $em
             ->getRepository('\Blog\Entity\BlogPost')
             ->findBy($state, array('created' => 'DESC'));

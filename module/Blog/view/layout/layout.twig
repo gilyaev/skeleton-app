@@ -13,7 +13,7 @@
     <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
     <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
     <link href="/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link href="https://s-media-cache-ak0.pinimg.com/originals/e5/b7/15/e5b715a5252f5f68aebd8b798e2bf027.jpg" rel="shortcut icon" type="image/vnd.microsoft.icon">
     {% block style %}{% endblock style %}
 
     <!-- Scripts -->
@@ -46,9 +46,11 @@
     <!-- content|raw is required for phtml fallback -->
     {% block content %}{{ content|raw }}{% endblock content %}
     <hr>
-    <footer>
-        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. {{ translate('All rights reserved.') }}</p>
-    </footer>
+    <div style="text-align: center" class="row">
+        <footer>
+            <p>&copy; {{ "now"|date("Y") }} by dmytro.borysovskyi</p>
+        </footer>
+    </div>
 </div> <!-- /container -->
 {% block inline %}{% endblock inline %}
 </body>
